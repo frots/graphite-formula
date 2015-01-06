@@ -31,6 +31,8 @@ pip-install-diamond:
     - source: salt://graphite/files/diamond/diamond.conf
     - mode: 644
     - template: jinja
+    - context:
+      graphite_path_prefix: {{ graphite.path_prefix }}
     - require:
       - cmd: pip-install-diamond
 
